@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./src/assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <?php echo '<link rel="stylesheet" href="style.css" />'; ?>
+    <?php echo '<link rel="stylesheet" href=".\style.css" />'; ?>
     <title>Лабораторная работа 2.2</title>
 </head>
 
@@ -40,17 +40,19 @@
             </ul>
         </div>
         <!-- <h1 class="text-center text-5xl">Hello world!</h1> -->
-        <?php
-        $url = 'https://www.example.com';
-        $headers = get_headers($url);
+        <div class="pl-16 pt-10">
+            <?php
+            $url = 'https://www.example.com';
+            $headers = get_headers($url);
 
-        echo "<pre>";
-        print_r($headers);
-        echo "</pre>";
-        ?>
+            echo "<pre>";
+            print_r($headers);
+            echo "</pre>";
+            ?>
+        </div>
     </main>
 
-    <footer class="footer bg-neutral text-neutral-content items-center p-4">
+    <footer class=" footer bg-neutral text-neutral-content items-center p-4">
         <div class="grid-flow-col items-center">
             <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
                 clip-rule="evenodd" class="fill-current">
