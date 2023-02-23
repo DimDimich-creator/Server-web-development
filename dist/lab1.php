@@ -40,7 +40,7 @@
             </ul>
         </div>
         <h1 class="text-center text-5xl">Hello world!</h1>
-        <div class="text-center pt-10 pl-96"><?php echo 'Hello, world!'; ?></div>
+        <div class="text-center pt-10 pl-16"><?php echo 'Hello, world!'; ?></div>
     </main>
 
     <footer class="footer bg-neutral text-neutral-content items-center p-4">
