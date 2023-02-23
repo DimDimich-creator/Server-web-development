@@ -12,14 +12,14 @@
 <body class="flex h-screen flex-col justify-between">
     <header>
         <div class="navbar bg-base-100">
-            <a href="../../../index.html" class="btn btn-ghost text-xl normal-case">МосПолитех</a>
+            <a href="home.html" class="btn btn-ghost text-xl normal-case">МосПолитех</a>
         </div>
     </header>
     <main class="mb-auto">
         <div class="breadcrumbs bg-base-200 pl-16 text-sm">
             <ul>
                 <li>
-                    <a href="../../../index.html">
+                    <a href="home.html">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             class="mr-2 h-4 w-4 stroke-current">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,7 +40,7 @@
             </ul>
         </div>
         <h1 class="text-center text-5xl">Hello world!</h1>
-        <?php echo 'Hello, world!'; ?>
+        <div class="text-center pt-10 pl-96"><?php echo 'Hello, world!'; ?></div>
     </main>
 
     <footer class="footer bg-neutral text-neutral-content items-center p-4">
