@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dracula">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,23 +15,82 @@
     <main class="mb-auto">
       <h1 class="text-center text-5xl">Серверная разработка</h1>
       <h2 class="mt-5 text-center text-3xl">Лабараторные работы</h2>
-      <ul class="flex flex-col items-center py-10">
-        <li class="">
-          <a class="link link-secondary text-lg" href="src/labs/lab1/lab1.html"
-            >Лабараторна работа 1</a
-          >
-        </li>
-        <li class="">
-          <a class="link link-secondary text-lg" href="src\labs\lab2\lab2.html"
-            >Лабараторна работа 2.1</a
-          >
-        </li>
-        <li class="">
-          <a class="link link-secondary text-lg" href="src\labs\lab2\lab2.html"
-            >Лабараторна работа 2.2</a
-          >
-        </li>
-      </ul>
+      <div class="m-auto mt-10 max-w-4xl overflow-x-auto">
+        <table class="table w-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th></th>
+              <th>Название</th>
+              <th>Лабараторная</th>
+              <th>GitHub</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- row 1 -->
+            <tr>
+              <th>1</th>
+              <td>Hello, World!</td>
+              <td>
+                <a class="link-hover" href="src/labs/lab1/lab1.html"
+                  >Лабараторная работа 1</a
+                >
+              </td>
+              <td>
+                <a
+                  class="link-hover text-primary"
+                  href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab1.php"
+                  >Код</a
+                >
+              </td>
+            </tr>
+            <!-- row 2 -->
+            <tr>
+              <th>2</th>
+              <td>Форма обратной связи</td>
+              <td>
+                <a class="link-hover" href="src\labs\lab2\lab2.html"
+                  >Лабараторная работа 2.1</a
+                >
+                <br />
+                <a class="link-hover" href="src\labs\lab2\lab2.html"
+                  >Лабараторная работа 2.2</a
+                >
+              </td>
+              <td>
+                <a
+                  class="link-hover text-primary"
+                  href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab2.php"
+                  >Код</a
+                >
+                <br />
+                <a
+                  class="link-hover text-secondary"
+                  href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab2_2.php"
+                  >Код</a
+                >
+              </td>
+            </tr>
+            <!-- row 3 -->
+            <tr>
+              <th>3</th>
+              <td>Мои навыки</td>
+              <td>
+                <a class="link-hover" href="src\labs\lab3\lab3.html"
+                  >Лабараторная работа 3</a
+                >
+              </td>
+              <td>
+                <a
+                  class="link-hover text-primary"
+                  href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab3.html"
+                  >Код</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
 
     <footer
