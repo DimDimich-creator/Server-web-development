@@ -49,24 +49,24 @@
             
             $equation = $_POST['text'];;
             list($a, $operator, $b, $equal, $c) = explode(" ", $equation);
-            $a = (float)$a;
-            $b = (float)$b;
-            $c = (float)$c;
-
-            // Определяем тип оператора и расположение неизвестной переменной
-            if ($operator == '+') {
-            $x = $c - $b;
-            } elseif ($operator == '-') {
-            $x = $c + $b;
-            } elseif ($operator == '*') {
-            $x = $c / $b;
+            // $a = (float)$a;
+            // $b = (float)$b;
+            // $c = (float)$c;
+            if ($b == 'x') {
+                echo "Введите x первым пожалуйста :)";
             } else {
-            $x = $c * $b;
-            }
-
-            // Выводим результат
-            
-            echo "Значение переменной x = $x";
+                if ($operator == '+') {
+                $x = $c - $b;
+                } elseif ($operator == '-') {
+                $x = $c + $b;
+                } elseif ($operator == '*') {
+                $x = $c / $b;
+                } else {
+                $x = $c * $b;
+                }
+                if ($x != ''){
+                    echo "Значение переменной x = $x";}
+            }        
             ?>
             </div>
             <img src="block.svg" alt="" class='mt-10 ml-8'>
