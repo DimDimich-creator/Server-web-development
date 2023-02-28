@@ -2300,6 +2300,10 @@ html {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.ml-8 {
+  margin-left: 8rem;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
 }
