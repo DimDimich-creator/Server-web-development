@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-theme="dracula">
 
 <head>
     <meta charset="UTF-8" />
@@ -52,6 +52,7 @@
             // $a = (float)$a;
             // $b = (float)$b;
             // $c = (float)$c;
+            $x = "";
             if ($b == 'x') {
                 echo "Введите x первым пожалуйста :)";
             } else {

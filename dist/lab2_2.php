@@ -39,8 +39,7 @@
                 </li>
             </ul>
         </div>
-        <!-- <h1 class="text-center text-5xl">Hello world!</h1> -->
-        <div class="pl-16 pt-10">
+        <div class="pl-16 pt-10 max-w-xl ">
             <?php
             $url = 'https://www.example.com';
             $headers = get_headers($url);
@@ -52,7 +51,7 @@
         </div>
     </main>
 
-    <footer class=" footer bg-neutral text-neutral-content items-center p-4">
+    <footer class="footer bg-neutral text-neutral-content items-center gap-y-0 p-4">
         <div class="grid-flow-col items-center">
             <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
                 clip-rule="evenodd" class="fill-current">
