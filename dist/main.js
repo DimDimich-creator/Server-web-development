@@ -15,6 +15,7 @@ const minuse = document.getElementById("minuse");
 const slesh = document.getElementById("slesh");
 const multiply = document.getElementById("multiply");
 const enter = document.getElementById("enter");
+const point = document.getElementById("point");
 const input = document.getElementById("input");
 let a = "";
 one.onclick = () => {
@@ -63,6 +64,9 @@ C.onclick = () => {
 
 minuse.onclick = () => {
   added("-");
+};
+point.onclick = () => {
+  added(".");
 };
 
 del.onclick = () => {
