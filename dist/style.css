@@ -1701,6 +1701,9 @@ html {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
 }
+.menu > :where(li.disabled > :not(ul):focus) {
+  cursor: auto;
+}
 .navbar {
   display: flex;
   align-items: center;
@@ -1767,6 +1770,17 @@ html {
   background-color: hsl(var(--pf, var(--p)) / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: hsl(var(--pc) / var(--tw-text-opacity));
+}
+.btm-nav > .disabled,
+.btm-nav > .disabled:hover,
+.btm-nav > [disabled],
+.btm-nav > [disabled]:hover {
+  pointer-events: none;
+  --tw-border-opacity: 0;
+  background-color: hsl(var(--n) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+  --tw-text-opacity: 0.2;
 }
 .btm-nav > * .label {
   font-size: 1rem;
@@ -2081,6 +2095,13 @@ html {
   outline: 2px solid hsla(var(--bc) / 0.2);
   outline-offset: 2px;
 }
+.input-primary {
+  --tw-border-opacity: 1;
+  border-color: hsl(var(--p) / var(--tw-border-opacity));
+}
+.input-primary:focus {
+  outline: 2px solid hsl(var(--p));
+}
 .input-disabled,
 .input[disabled] {
   cursor: not-allowed;
@@ -2112,6 +2133,17 @@ html {
 .link:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+.menu li.disabled > * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: hsl(var(--bc) / var(--tw-text-opacity));
+  --tw-text-opacity: 0.2;
+}
+.menu li.disabled > :hover {
+  background-color: transparent;
 }
 @keyframes progress-loading {
   50% {
@@ -2294,16 +2326,18 @@ html {
 .m-auto {
   margin: auto;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
 .mb-auto {
   margin-bottom: auto;
 }
 .mr-2 {
   margin-right: 0.5rem;
 }
-.ml-8 {
-  margin-left: 8rem;
-}
-
 .mt-10 {
   margin-top: 2.5rem;
 }
@@ -2328,6 +2362,9 @@ html {
 .min-h-screen {
   min-height: 100vh;
 }
+.w-16 {
+  width: 4rem;
+}
 .w-4 {
   width: 1rem;
 }
@@ -2336,6 +2373,9 @@ html {
 }
 .max-w-4xl {
   max-width: 56rem;
+}
+.max-w-\[17rem\] {
+  max-width: 17rem;
 }
 .max-w-sm {
   max-width: 24rem;
@@ -2449,15 +2489,14 @@ html {
   --tw-text-opacity: 1;
   color: hsl(var(--p) / var(--tw-text-opacity));
 }
-.text-secondary {
-  --tw-text-opacity: 1;
-  color: hsl(var(--s) / var(--tw-text-opacity));
-}
 .shadow-2xl {
   --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.hover\:opacity-30:hover {
+  opacity: 0.3;
 }
 @media (min-width: 640px) {
   .sm\:text-base {
