@@ -70,7 +70,7 @@
             }        
             ?>
             </div>
-            <img src="block.svg" alt="" class='mt-10 ml-8'>
+            <img src="block.svg" alt="" class='mt-10 ml-16'>
         </div>
     </main>
 
