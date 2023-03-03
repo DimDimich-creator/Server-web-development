@@ -24,6 +24,54 @@
               <th>Название</th>
               <th>Лабораторная</th>
               <th>GitHub</th>
+              <td class="pt-[1.1rem]">
+                Статус
+                <div class="dropdown dropdown-end -mt-2">
+                  <label
+                    tabindex="0"
+                    class="btn btn-circle btn-ghost btn-xs text-info"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      class="h-3 w-3 stroke-current"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      ></path>
+                    </svg>
+                  </label>
+                  <div
+                    tabindex="0"
+                    class="card compact dropdown-content bg-base-100 rounded-box w-68 shadow"
+                  >
+                    <div class="card-body">
+                      <h2 class="card-title text-sm">
+                        Статус проверки преподавателем
+                      </h2>
+                      <div class="flex flex-col justify-around gap-2">
+                        <div class="flex items-center gap-2">
+                          <input
+                            type="checkbox"
+                            class="checkbox"
+                            disabled
+                            checked
+                          />
+                          - проверенно
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <input type="checkbox" class="checkbox" disabled />
+                          - непроверенно
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
             </tr>
           </thead>
           <tbody>
@@ -42,6 +90,9 @@
                   href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab1.php"
                   >Код</a
                 >
+              </td>
+              <td class="">
+                <input type="checkbox" class="checkbox" disabled checked />
               </td>
             </tr>
             <!-- row 2 -->
@@ -70,6 +121,9 @@
                   >Код</a
                 >
               </td>
+              <td class="">
+                <input type="checkbox" class="checkbox" disabled checked />
+              </td>
             </tr>
             <!-- row 3 -->
             <tr>
@@ -86,6 +140,9 @@
                   href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab3.html"
                   >Код</a
                 >
+              </td>
+              <td class="">
+                <input type="checkbox" class="checkbox" disabled checked />
               </td>
             </tr>
             <!-- row 4 -->
@@ -104,6 +161,9 @@
                   >Код</a
                 >
               </td>
+              <td class="">
+                <input type="checkbox" class="checkbox" disabled checked />
+              </td>
             </tr>
             <tr>
               <th>5</th>
@@ -119,6 +179,9 @@
                   href="https://github.com/DimDimich-creator/Server-web-development/blob/main/dist/lab5.php"
                   >Код</a
                 >
+              </td>
+              <td class="">
+                <input type="checkbox" class="checkbox" disabled />
               </td>
             </tr>
           </tbody>
