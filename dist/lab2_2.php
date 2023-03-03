@@ -12,7 +12,8 @@
 <body class="flex h-screen flex-col justify-between">
     <header>
         <div class="navbar bg-base-100">
-            <a href="index.html" class="btn btn-ghost text-xl normal-case">МосПолитех</a>
+            <a href="index.html" class="btn btn-ghost flex items-center gap-2 text-xl normal-case">
+                <img src="logo.svg" alt="" width="36px" class="" /> МосПолитех</a>
         </div>
     </header>
     <main class="mb-auto">
