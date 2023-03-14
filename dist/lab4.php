@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dracula">
+<html lang="ru" data-theme="lofi">
 
 <head>
     <meta charset="UTF-8" />
