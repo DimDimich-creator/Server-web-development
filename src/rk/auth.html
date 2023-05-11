@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon__rk.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="stylesheet" href="../../dist/assets/index.a7e8be84.css">
+    <title>Course work</title>
+</head>
+
+<body>
+    <div class="hero min-h-screen bg-base-200">
+        <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="text-center lg:text-left">
+                <h1 class="text-5xl font-bold">Основы серверной разработки</h1>
+                <p class="py-6">Курсовая работа</p>
+            </div>
+            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <form class="card-body">
+                    <div class="form-control">
+                        <label class="label" for="username">
+                            <span class="label-text">Email</span>
+                        </label>
+                        <input type="email" placeholder="email" class="input input-bordered" id="username"
+                            name="username" />
+                    </div>
+                    <div class="form-control">
+                        <label class="label" for="password">
+                            <span class="label-text">Пароль</span>
+                        </label>
+                        <input type="password" placeholder="password" class="input input-bordered" id="password"
+                            name="password" />
+                        <label class="label">
+                            <a href="#" class="label-text-alt link link-hover">Забыли пароль?</a>
+                        </label>
+                    </div>
+
+                    <div class="form-control mt-6">
+                        <button type="button" onclick="login()" class="btn btn-primary">Войти</button>
+                    </div>
+                    <span id="error" class="text-sm bg-red-900"></span>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function login() {
+            // Получаем данные из формы входа
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Отправляем запрос на сервер для проверки учетных данных
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'login.php', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    // Если учетные данные верны, перенаправляем на защищенную страницу
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        window.location.href = 'index.html';
+                    } else {
+                        document.getElementById('error').innerHTML = response.error;
+                    }
+                } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200) {
+                    // Если запрос не удалось выполнить, выводим сообщение об ошибке
+                    document.getElementById('error').innerHTML =
+                        'Ошибка при отправке запроса. Пожалуйста, попробуйте позже.';
+                }
+            };
+            xhr.send('username=' + username + '&password=' + password);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="night">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon__rk.svg" type="image/x-icon">
+    <link rel="stylesheet" href="/src/index.css" />
+    <link rel="stylesheet" href="../../dist/assets/index.a7e8be84.css">
+    <title>Course work</title>
+</head>
+
+<body>
+    <div class="navbar bg-base-100">
+        <div class="navbar-start">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
+                </label>
+                <ul tabindex="0"
+                    class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Massanger</a></li>
+                    <li><a>Код</a></li>
+                    <li><a>Выйти</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="navbar-center">
+            <a class="btn btn-ghost normal-case text-xl">Massanger</a>
+        </div>
+        <div class="navbar-end">
+            <!-- <button class="btn btn-ghost btn-circle"> -->
+            <div class="avatar online">
+                <div class="w-10 rounded-full">
+                    <img src="../assets/anakin.jpg" />
+                </div>
+            </div>
+            <!-- </button> -->
+        </div>
+    </div>
+    <div class="mockup-window border bg-base-300 max-w-4xl m-auto mt-14 flex justify-between h-[80vh]">
+
+        <div class="btn-group btn-group-vertical w-[23rem] mt-8">
+            <button onclick="getChatMessages(1)" class="btn flex justify-start gap-2 text-xs">
+                <div class="avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="../assets/bar.jpg" />
+                    </div>
+                </div>Космический бар
+            </button>
+            <button onclick="getChatMessages(2)" class="btn flex justify-start gap-2 text-xs mt-1">
+                <div class="avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="../assets/orden.jpg" />
+                    </div>
+                </div>Джедайский орден
+            </button>
+            <button onclick="getChatMessages(3)" class="btn flex justify-start gap-2 text-xs mt-1">
+                <div class="avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="../assets/voice.jpg" />
+                    </div>
+                </div>Галактический голос
+            </button>
+        </div>
+
+        <div class="max-w-lg bg-base-200 -mt-5">
+            <div class="px-4 py-16 h-[90%] overflow-scroll" id="chat">
+                <div class="chat chat-start">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="../assets/obi.jpg" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Оби-Ван Кеноби
+                        <time class="text-xs opacity-50">12:45</time>
+                    </div>
+                    <div class="chat-bubble">Ты был избранником</div>
+                    <div class="chat-footer opacity-50">
+                        Отправлено
+                    </div>
+                </div>
+
+                <div class="chat chat-end">
+                    <div class="chat-image avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="../assets/anakin.jpg" />
+                        </div>
+                    </div>
+                    <div class="chat-header">
+                        Энакин
+                        <time class="text-xs opacity-50">12:46</time>
+                    </div>
+                    <div class="chat-bubble">Я ненавижу тебя!</div>
+                </div>
+            </div>
+            <div class="form-control">
+                <form class="input-group justify-end p-1" id="message-form">
+
+                    <input type="text" placeholder="Сообщение" id="message-input"
+                        class="input input-bordered w-[102rem] focus:outline-0 " />
+                    <button type="submit" class="btn btn-square">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+                        </svg>
+
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const chat = document.getElementById('chat');
+        const messageForm = document.getElementById('message-form');
+        const messageInput = document.getElementById('message-input');
+
+        function addMessageToChat(message) {
+            const div = document.createElement('div');
+            div.classList.add('chat', 'chat-end');
+            const bubble = document.createElement('div');
+            bubble.classList.add('chat-bubble');
+            bubble.textContent = message;
+            div.appendChild(bubble);
+            const chatImage = document.createElement('div');
+            chatImage.classList.add('chat-image', 'avatar');
+            chatImage.innerHTML = '<div class="w-10 rounded-full"><img src="../assets/anakin.jpg" /></div>';
+            div.appendChild(chatImage);
+            const chatHeader = document.createElement('div');
+            chatHeader.classList.add('chat-header');
+            const now = new Date();
+            // получаем текущие часы и минуты
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            // форматируем часы и минуты в нужный вид
+            const formattedHours = hours < 10 ? `0${hours}` : hours;
+            const formattedMinutes = minutes < 10 ? `0${minutes}` :
+                minutes;
+            const time = document.createElement('time');
+            time.classList.add('text-xs', 'opacity-50');
+            time.textContent = `${formattedHours}:${formattedMinutes}`;
+            chatHeader.textContent = 'Энакин ';
+            div.appendChild(chatHeader);
+            chatHeader.appendChild(time);
+            const chatFooter = document.createElement('div');
+            chatFooter.classList.add('chat-footer', 'opacity-50');
+            chat.appendChild(div);
+            chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+        }
+
+        messageForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const message = messageInput.value;
+            messageInput.value = '';
+            fetch('server.php', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        message: message
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        addMessageToChat(data.message);
+                    }
+                });
+        });
+
+        function getChatMessages(chatId) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                var chatMessages = document.getElementById("chat");
+                chatMessages.innerHTML = "";
+                if (this.readyState == 4 && this.status == 200) {
+                    var messages = JSON.parse(this.responseText);
+                    messages.forEach(function (message) {
+                        const author = message.author;
+                        const text = message.text;
+                        const timee = message.time;
+                        const avatar = message.avatar;
+
+                        const div = document.createElement('div');
+                        div.classList.add('chat', 'chat-start');
+                        const bubble = document.createElement('div');
+                        bubble.classList.add('chat-bubble');
+                        bubble.textContent = text;
+                        div.appendChild(bubble);
+                        const chatImage = document.createElement('div');
+                        chatImage.classList.add('chat-image', 'avatar');
+                        chatImage.innerHTML =
+                            `<div class="w-10 rounded-full"><img src="${avatar}" /></div>`;
+                        div.appendChild(chatImage);
+                        const chatHeader = document.createElement('div');
+                        chatHeader.classList.add('chat-header');
+
+                        const time = document.createElement('time');
+                        time.classList.add('text-xs', 'opacity-50');
+                        time.textContent = timee;
+                        chatHeader.textContent = `${author} `;
+                        div.appendChild(chatHeader);
+                        chatHeader.appendChild(time);
+                        const
+                            chatFooter = document.createElement('div');
+                        chatFooter.classList.add('chat-footer', 'opacity-50');
+                        chat.appendChild(div);
+                        chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+                    });
+                }
+            };
+            xhr.open("GET", "chats.php?chatId=" + chatId, true);
+            xhr.send();
+        }
+
+    </script>
+</body>
+
+</html>
