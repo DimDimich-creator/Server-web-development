@@ -1,3 +1,4 @@
+[![wakatime](https://wakatime.com/badge/github/DimDimich-creator/Server-web-development.svg)](https://wakatime.com/badge/github/DimDimich-creator/Server-web-development)
 # Курс серверной разработки
 ## [Сайт курса](http://45.10.42.11:30002/)
 
